@@ -53,5 +53,12 @@ main>.container {
 
 .messageStyle {
     font-size: 1.5rem;
-    font-weight: bold;
+}
+
+.boldItem {
+    font-weight: bolder;
+}
+
+.coloredItem {
+    color: red;
 }

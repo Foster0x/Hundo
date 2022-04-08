@@ -1,20 +1,29 @@
 // Sep One - controller/accepts requests
-function getMessage() {
-    let msg = document.getElementById("txtMessage").value;
-    displayMessage(msg);
+function getValues() {
+    let startValue = document.getElementById("startValue").value;
+    let endValue = document.getElementById("endValue").value;
+    displayValues(startValue, endValue);
 }
 
 // Final Step - view
-function displayMessage(message) {
-
+function displayValues(start, end) {
     // First get the ol element from the page
     element = document.getElementById("results");
-    // Next creat a new li element
-    let item = document.createElement("li");
-    // Add classes to the li element
-    item.classList.add("list-group-item");
-    // Set the message for the li element
-    item.innerHTML = message;
-    // Add the new item to the list 
-    element.appendChild(item);
+    // For loop
+    for (let i = start; i <= end; i++) {
+        // Create a new li element
+        let item = document.createElement("li");
+        // If item is even, make bold-else, make other color - through CSS
+        if (i % 2 == 0) {
+            item.classList.add("boldItem");
+        } else {
+            item.classList.add("coloredItem");
+        }
+        // Add classes to the li element
+        item.classList.add("list-group-item");
+        // Set the message for the li element
+        item.innerHTML = i;
+        // Add the new item to the list
+        element.appendChild(item);
+    }
 }
